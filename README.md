@@ -1,2 +1,3 @@
-# APPDenunciai
-Projeto Disciplina Eng.SW
+# Readme
+
+Projeto Denunciai  criado na cadeira de Engenharia de software
