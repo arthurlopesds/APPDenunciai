@@ -48,7 +48,8 @@ export default class OcorrenciaSucesso extends Component{
 
 const styles = StyleSheet.create({
     principal:{
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#FCFCFC'
     },
     botao:{
         backgroundColor: '#FF473A',

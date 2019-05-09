@@ -12,6 +12,8 @@ import {
 import {DrawerActions} from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import RadioForm from 'react-native-simple-radio-button'
+import moment from 'moment'
+import 'moment/locale/pt-br'
 
 
 imgCamera = require('../../imgs/btn-camera-50.png')
@@ -29,7 +31,7 @@ export default class Denuncia extends Component{
         tituloDenuncia: '',
         descDenuncia: '',
         Local: '',
-        dataDenuncia: '',
+        dataDenuncia: moment().locale('pt-br').format('ddd, D [de] MMMM'),
         foto:''
     }
 

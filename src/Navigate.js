@@ -5,6 +5,8 @@ import telaDenunciar from './Tela/telaDenuncia'
 import ocorrenciaSucesso from './Tela/ocorrenciaSucesso'
 import telaAjuda from './Tela/telaAjuda'
 import Mapa from './Tela/Mapa'
+import telaDenuncias from './Tela/telaVisualizaDenun'
+import Ocorrencia from './Tela/Ocorrencia'
 
 const MenuRoutes = {
     Denunciar: {
@@ -14,13 +16,21 @@ const MenuRoutes = {
             title: 'Denunciar'
         }
     },
+    Denuncias:{
+        name: 'Visualizar Denúncias',
+        screen: telaDenuncias,
+        navigationOptions:{
+            title: 'Visualizar Denúncias'
+        }
+    },
     Ajuda:{
         name: 'Ajuda',
         screen: telaAjuda,
         navigationOptions:{
             title: 'Ajuda'
         }
-    }
+    },
+
 }
 
 const MenuConfig = {
@@ -54,6 +64,10 @@ const MainRoutes = {
     Mapa: {
         name: 'Mapa',
         screen: Mapa
+    },
+    Ocorrencia: {
+        name: 'Ocorrência',
+        screen: Ocorrencia
     }
 }
 
