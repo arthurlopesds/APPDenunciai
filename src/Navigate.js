@@ -4,6 +4,7 @@ import Login from './Tela/telaAuthLogCad'
 import telaDenunciar from './Tela/telaDenuncia'
 import ocorrenciaSucesso from './Tela/ocorrenciaSucesso'
 import telaAjuda from './Tela/telaAjuda'
+import Mapa from './Tela/Mapa'
 
 const MenuRoutes = {
     Denunciar: {
@@ -49,6 +50,10 @@ const MainRoutes = {
     OcorreSuc:{
         name: 'OcorreSuc',
         screen: ocorrenciaSucesso
+    },
+    Mapa: {
+        name: 'Mapa',
+        screen: Mapa
     }
 }
 

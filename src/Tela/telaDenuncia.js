@@ -37,6 +37,10 @@ export default class Denuncia extends Component{
         this.props.navigation.navigate('OcorreSuc')
     }
 
+    abrirMapa = () => {
+        this.props.navigation.navigate('Mapa')
+    }
+
     render(){
         return(
             <ImageBackground style = {styles.background}>
@@ -80,7 +84,8 @@ export default class Denuncia extends Component{
                         </View>
 
                         <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={this.abrirMapa}>
                                 <Image source = {imgLocal}/>
                             </TouchableOpacity> 
                         </View>
