@@ -12,7 +12,6 @@ import {
 import moment from 'moment'
 import 'moment/locale/pt-br'
 
-
 const  denuncias = [
     {
         id: Math.random(),
@@ -54,9 +53,7 @@ const itemEstilo = {
 }
 
 
-
 export const Post = props=>
-
     <TouchableOpacity
         onPress = { () => this.props.navigation.navigate('Ocorrencia')} 
     >
@@ -75,8 +72,8 @@ export default props =>{
         <ScrollView>
             <FlatList data={denuncias} renderItem ={renderItem}
                 keyExtractor={(_,index) => index.toString()} />
-
         </ScrollView>
+
     )
 }
 

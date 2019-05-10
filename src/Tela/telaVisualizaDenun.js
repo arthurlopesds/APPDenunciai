@@ -7,7 +7,7 @@ import {
     Dimensions
 } from 'react-native'
 
-import {DrawerActions} from 'react-navigation'
+import { DrawerActions } from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Denuncias from '../Components/visualizarOcorrencias'
 
@@ -20,8 +20,8 @@ export default class VerDenuncias extends Component{
             <View style = {styles.principal}>
                 <View style={styles.titulopageDenun}>
                     <View style = {styles.viewIcon}>
-                        <TouchableOpacity onPress={() =>{} }>
-                            <Icon name="bars" size={30} color="#999"/>
+                        <TouchableOpacity onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+                            <Icon name="bars" size={35} color="#999"/>
                         </TouchableOpacity>
                     </View>
                     <View style ={styles.viewTitle}>
@@ -33,7 +33,7 @@ export default class VerDenuncias extends Component{
                 </View>
                     <Denuncias />
                 <View>
-                    
+                
                 </View>
             </View>
         )

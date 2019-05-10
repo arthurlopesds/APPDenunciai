@@ -1,4 +1,4 @@
-//import React from 'react'
+import React from 'react'
 import { createSwitchNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
 import Login from './Tela/telaAuthLogCad'
 import telaDenunciar from './Tela/telaDenuncia'
@@ -8,27 +8,37 @@ import Mapa from './Tela/Mapa'
 import telaDenuncias from './Tela/telaVisualizaDenun'
 import Ocorrencia from './Tela/Ocorrencia'
 import CameraRoute from './camera'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const MenuRoutes = {
     Denunciar: {
         name: 'Denunciar',
         screen: telaDenunciar,
         navigationOptions:{
-            title: 'Denunciar'
+            title: 'Denunciar',
+            drawerIcon:(
+                <Icon name="exclamation-circle" size={28} color="#000000" />
+            )
         }
     },
     Denuncias:{
         name: 'Visualizar Denúncias',
         screen: telaDenuncias,
         navigationOptions:{
-            title: 'Visualizar Denúncias'
+            title: 'Visualizar Denúncias',
+            drawerIcon:(
+                <Icon name="file-text-o" size={28} color="#000000" />
+            )
         }
     },
     Ajuda:{
         name: 'Ajuda',
         screen: telaAjuda,
         navigationOptions:{
-            title: 'Ajuda'
+            title: 'Ajuda',
+            drawerIcon:(
+                <Icon name="question-circle-o" size={28} color="#000000" />
+            )
         }
     },
 
@@ -67,7 +77,7 @@ const MainRoutes = {
         screen: Mapa
     },
     Ocorrencia: {
-        name: 'Ocorrência',
+        name: 'Ocorrencia',
         screen: Ocorrencia
     },
     Camera:{

@@ -3,9 +3,11 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions
 } from 'react-native'
-
+import {DrawerActions} from 'react-navigation'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 export default class Ajuda extends Component{
 
@@ -13,9 +15,16 @@ export default class Ajuda extends Component{
         return(
             <View style = {styles.container}>
                 <View style={styles.cabecalho}>
-                    <Text style = {styles.txtCabecalho}>
-                        Ajuda
-                    </Text>
+                    <View style = {styles.viewIcon}>
+                        <TouchableOpacity onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}>
+                            <Icon name="bars" size={30} color="#999"/>
+                        </TouchableOpacity>
+                    </View>
+                    <View style ={styles.viewTitle}>
+                        <Text style = {styles.txtCabecalho}>
+                            Ajuda
+                        </Text>
+                    </View>
                 </View>
 
                 <View>
@@ -78,13 +87,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     cabecalho:{
-        margin: 20,
-        alignItems: 'center'
+        // margin: 20,
+        // alignItems: 'center'
+        flexDirection:'row',
+        alignItems:'stretch',
+        width:'100%'
+    },
+    viewIcon:{
+        flex:1,
+        height:40,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
+    },
+    viewTitle:{
+        flex:8,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
     },
     txtCabecalho:{
         fontSize: 20,
         color: '#FF473A',
         fontWeight: 'bold'
+        
     },
     titleDenuncia:{
         fontSize: 20,
