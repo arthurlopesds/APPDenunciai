@@ -43,6 +43,10 @@ export default class Denuncia extends Component{
         this.props.navigation.navigate('Mapa')
     }
 
+    abrirCamera = () =>{
+        this.props.navigation.navigate('Camera')
+    }
+
     render(){
         return(
             <ImageBackground style = {styles.background}>
@@ -102,11 +106,10 @@ export default class Denuncia extends Component{
                     </View>
 
                     <View style = {styles.camera}>
-                        <TouchableOpacity> 
-                            <Image source = {imgVideo} style = {styles.imagem}/>
-                        </TouchableOpacity>
+                       
 
-                        <TouchableOpacity> 
+                        <TouchableOpacity onPress={this.abrirCamera}> 
+                            
                             <Image source = {imgCamera} style = {styles.imagem}/>
                         </TouchableOpacity>
                     </View>

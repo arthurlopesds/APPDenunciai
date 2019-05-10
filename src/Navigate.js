@@ -7,6 +7,7 @@ import telaAjuda from './Tela/telaAjuda'
 import Mapa from './Tela/Mapa'
 import telaDenuncias from './Tela/telaVisualizaDenun'
 import Ocorrencia from './Tela/Ocorrencia'
+import CameraRoute from './camera'
 
 const MenuRoutes = {
     Denunciar: {
@@ -68,6 +69,10 @@ const MainRoutes = {
     Ocorrencia: {
         name: 'Ocorrência',
         screen: Ocorrencia
+    },
+    Camera:{
+        name:'Camera',
+        screen: CameraRoute
     }
 }
 
