@@ -11,9 +11,7 @@ import { DrawerActions } from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Denuncias from '../Components/visualizarOcorrencias'
 
-
 export default class VerDenuncias extends Component{
-
 
     render(){
         return(

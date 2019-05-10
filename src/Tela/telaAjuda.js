@@ -64,14 +64,12 @@ export default class Ajuda extends Component{
                 <View style = {styles.infoDuvidas}>
 
                     <Text style = {styles.txtInfo}>
-                        Dúvidas ou problemas, entre em contato conosco clicando no botão
+                        Dúvidas ou problemas, entre em contato conosco pelo email abaixo:
                     </Text>
                 
 
-                    <View style = {styles.viewBotao}>
-                        <TouchableOpacity style = {styles.botao}>
-                            <Text style = {styles.txtBotao}>Contate-nos por email</Text>
-                        </TouchableOpacity>
+                    <View style = {styles.viewEmail}>
+                        <Text style = {styles.Email}>faleconosco@denunciai.com.br</Text>
                     </View>
                
                 </View>
@@ -130,20 +128,14 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: 'black'
     },
-    viewBotao:{
+    viewEmail:{
         margin: 15,
         alignItems:'center'
     },
-    botao:{
-        backgroundColor: '#FF473A',
-        alignItems: 'center',
-        padding: 15,
-        width: 300,
-        marginBottom: 10,
-    },
-    txtBotao:{
-        fontSize: 13,
-        color: 'white'
+    
+    Email:{
+        fontSize: 15,
+        color: '#FF473A'
     },
     infoDuvidas:{
         margin: 10,
