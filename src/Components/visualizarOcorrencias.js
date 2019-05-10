@@ -53,26 +53,36 @@ const itemEstilo = {
 }
 
 
-export const Post = props=>
-    <TouchableOpacity
-        onPress = { () => this.props.navigation.navigate('Ocorrencia')} 
-    >
-        <View style = {itemEstilo}> 
-            <Text style = {styles.title}>{props.titleDenuncia}</Text>
-            <Text style = {styles.dataOcorrencia}>{props.Date}</Text>
-        </View>
-    </TouchableOpacity>
+export const Post = props =>{
+    
+    return(
+            <View style = {itemEstilo}> 
+                <Text style = {styles.title}>{props.titleDenuncia}</Text>
+                <Text style = {styles.dataOcorrencia}>{props.Date}</Text>
+            </View>
+    )
+}
 
 export default props =>{
+
+    const {navigation} = props;
+
     const renderItem = ({item})=>{
-        return <Post {...item}/>
+        return (
+            <TouchableOpacity 
+                onPress = {() => navigation.navigate('Ocorrencia')}
+            >
+                <Post {...item}/>
+            </TouchableOpacity>
+        )
+
     }
 
     return(
-        <ScrollView>
-            <FlatList data={denuncias} renderItem ={renderItem}
-                keyExtractor={(_,index) => index.toString()} />
-        </ScrollView>
+            <ScrollView>
+                <FlatList data={denuncias} renderItem ={renderItem}
+                    keyExtractor={(_,index) => index.toString()} />
+            </ScrollView>
 
     )
 }

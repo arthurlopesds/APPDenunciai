@@ -29,7 +29,7 @@ export default class VerDenuncias extends Component{
                     </View>
 
                 </View>
-                    <Denuncias />
+                    <Denuncias navigation = {this.props.navigation} />
                 <View>
                 
                 </View>

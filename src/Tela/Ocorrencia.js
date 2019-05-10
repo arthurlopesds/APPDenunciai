@@ -73,10 +73,12 @@ export default class Ocorrencia extends Component{
                 </View>
 
                 <View style = {styles.viewBotao}>
-                    <TouchableOpacity style = {styles.botao}>
+                    <TouchableOpacity style = {styles.botao}
+                        onPress = {this.props.navigation.goBack}
+                    >
                         <View>
                             <Text style = {styles.txtBotao}>
-                                Remover Denúncia
+                                Voltar
                             </Text>
                         </View>
                     </TouchableOpacity>
