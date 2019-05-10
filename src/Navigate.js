@@ -46,7 +46,10 @@ const MenuRoutes = {
         name: 'Perfil',
         screen: Perfil,
         navigationOptions: {
-            title: 'Perfil'
+            title: 'Perfil',
+            drawerIcon:(
+                <Icon name="user-o" size={28} color="#000000" />
+            )
         }
     }
 
