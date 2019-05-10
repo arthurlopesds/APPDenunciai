@@ -9,6 +9,7 @@ import telaDenuncias from './Tela/telaVisualizaDenun'
 import Ocorrencia from './Tela/Ocorrencia'
 import CameraRoute from './camera'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import Perfil from './Tela/Profile'
 
 const MenuRoutes = {
     Denunciar: {
@@ -41,6 +42,13 @@ const MenuRoutes = {
             )
         }
     },
+    Perfil:{
+        name: 'Perfil',
+        screen: Perfil,
+        navigationOptions: {
+            title: 'Perfil'
+        }
+    }
 
 }
 

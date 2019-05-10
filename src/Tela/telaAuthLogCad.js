@@ -9,24 +9,27 @@ import { View,
     Alert
 } from 'react-native'
 
+import {connect} from 'react-redux'
+import { login } from '../store/actions/user'
+
 
 ImgBack = require('../../imgs/background.png')
 ImgLogo = require('../../imgs/DenunciAI.png')
 
-export default class AuthLogCad extends Component{
+class AuthLogCad extends Component{
 
     state = {
         cadastroOuLogin: false,
-        nome: '',
-        sobrenome:'',
-        email:'',
+        name: 'Yure',
+        sobrenome:'Galdino',
+        email:'yuregaldino@hotmail.com',
         senha:'',
         confirmaSenha:'',
         fraseCadastro:''
     }
 
     login = () =>{
-      
+        this.props.onLogin({...this.state})
         this.props.navigation.navigate('Denunciar')
     }
 
@@ -39,8 +42,8 @@ export default class AuthLogCad extends Component{
                     {this.state.cadastroOuLogin && 
                         <TextInput placeholder='Nome'
                         style={styles.input}
-                        value= {this.state.nome}
-                        onChangeText={nome => this.setState({nome})}/>
+                        value= {this.state.name}
+                        onChangeText={name => this.setState({name})}/>
                     }
                     {this.state.cadastroOuLogin && 
                         <TextInput placeholder='Sobrenome'
@@ -134,6 +137,12 @@ export default class AuthLogCad extends Component{
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return{
+        onLogin: user => dispatch(login(user))
+    } 
+}
+
 const styles = StyleSheet.create({
     background:{
         flex: 1,
@@ -183,6 +192,6 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: 'white'
     }
-
-
 })
+
+export default connect(null,mapDispatchToProps)(AuthLogCad)
