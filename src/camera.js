@@ -4,6 +4,9 @@ import { RNCamera } from "react-native-camera";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default Camera = () => {
+
+
+
   const [imageUri, setImageUri] = useState(null);
   takePicture = async () => {
     try {
@@ -50,6 +53,7 @@ export default Camera = () => {
       flashMode={RNCamera.Constants.FlashMode.off}
       
     >   
+
         <View style={styles.viewButton}>
         <TouchableOpacity onPress={takePicture} style={styles.button}/>
         </View>

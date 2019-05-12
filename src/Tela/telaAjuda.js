@@ -85,8 +85,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     cabecalho:{
-        // margin: 20,
-        // alignItems: 'center'
         flexDirection:'row',
         alignItems:'stretch',
         width:'100%'

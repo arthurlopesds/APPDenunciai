@@ -8,10 +8,15 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native'
-
+import {DrawerActions} from 'react-navigation'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 export default class Ocorrencia extends Component{
+
+    Voltar = () =>{
+        this.props.navigation.navigate('Denunciar')
+    }
     
     state = {
         title:'Pichação Bancários',
@@ -25,14 +30,24 @@ export default class Ocorrencia extends Component{
     render(){
         return(
             <View style = {styles.principal}>
+
                 <View style={styles.cabecalho}>
-                    <Text style = {styles.txtCabecalho}>
-                        Visualizar Ocorrência
-                    </Text>
+                    <View style = {styles.viewIcon}>
+                        <TouchableOpacity 
+                            onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}
+                        >
+                            <Icon name="arrow-left" size={30} color="#999"/>
+                        </TouchableOpacity>
+                    </View>
+                    <View style ={styles.viewTitle}>
+                        <Text style = {styles.txtCabecalho}>
+                            Visualizar Denúncia
+                        </Text>
+                    </View>
                 </View>
 
                 <View style = {styles.txtLocal}>
-                    <View style = {styles.viewTitle}>
+                    <View style = {styles.viewLocal}>
                         <Text style={styles.txtTitle}>{this.state.title}</Text>
                     </View>
                     <View>
@@ -74,7 +89,7 @@ export default class Ocorrencia extends Component{
 
                 <View style = {styles.viewBotao}>
                     <TouchableOpacity style = {styles.botao}
-                        onPress = {this.props.navigation.goBack}
+                        onPress = {this.Voltar}
                     >
                         <View>
                             <Text style = {styles.txtBotao}>
@@ -93,31 +108,41 @@ export default class Ocorrencia extends Component{
 
 const styles = StyleSheet.create({
     principal:{
-        flex: 1,
+        flex:1,
         backgroundColor: '#FCFCFC',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     cabecalho:{
-        margin: 20,
-        alignItems: 'center'
+        flexDirection:'row',
+        alignItems:'stretch',
+        width:'100%',
+        marginBottom: Dimensions.get('window').height/9
+    },
+    viewIcon:{
+        flex:1,
+        height:40,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
+    },
+    viewTitle:{
+        flex:8,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
     },
     txtCabecalho:{
         fontSize: 20,
         color: '#FF473A',
         fontWeight: 'bold'
-    },
-    viewImagem:{
-        width: '90%',
-        height: Dimensions.get('window').width /2,
-        backgroundColor: '#EEE',
-        marginTop: 10
+        
     },
     imgContainer:{
         alignContent: 'center',
         justifyContent: 'center'
     },
     txtLocal:{
-        width:'90%'
+        width:'90%',
     },
     txtTitle:{
         color: 'black',
@@ -159,6 +184,24 @@ const styles = StyleSheet.create({
     imagem:{
         width: Dimensions.get('window').width * 8/9 ,
         height: Dimensions.get('window').width /2,
+    },
+    viewTitle:{ // View Denuncia
+        flex:8,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
+    },
+    viewIcon:{
+        flex:1,
+        height:40,
+        alignItems:'center',
+        justifyContent:'center',
+        width: Dimensions.get('window').width/3
+    },
+    titulopageDenun:{
+        flexDirection:'row',
+        alignItems:'stretch',
+        width:'100%'
     }
     
 })
